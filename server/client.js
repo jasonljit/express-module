@@ -7,5 +7,8 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', require('./routes/client'));
+app.use('/second-page', require('./routes/client/second-page'));
+
+app.use('/api/form', require('./routes/client/api/form'));
 
 module.exports = app;
