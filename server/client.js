@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const connectionLogger = require('./middlewares/connection-logger');
+const morgan = require('morgan');
 
-app.use(connectionLogger);
+app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
